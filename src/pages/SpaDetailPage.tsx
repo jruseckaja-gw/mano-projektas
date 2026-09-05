@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import spasData from '../data/spas.json'
+import { CompareAddButton } from '../components/CompareAddButton'
 import {
   countryLabels,
   goalLabels,
@@ -80,14 +81,17 @@ export function SpaDetailPage() {
       <h2 className="mt-6 text-lg font-semibold text-sage-dark">Aprašymas</h2>
       <p className="mt-2 leading-relaxed text-sage-dark/80">{spa.summary}</p>
 
-      <a
-        href={spa.websiteUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-8 inline-block rounded-full bg-sage px-6 py-3 text-sand hover:bg-sage-dark"
-      >
-        Oficiali svetainė
-      </a>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-start">
+        <a
+          href={spa.websiteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block rounded-full bg-sage px-6 py-3 text-center text-sand hover:bg-sage-dark"
+        >
+          Oficiali svetainė
+        </a>
+        <CompareAddButton spaId={spa.id} />
+      </div>
     </article>
   )
 }

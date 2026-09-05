@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useCompare } from '../hooks/useCompare.ts'
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   [
@@ -9,8 +10,14 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
       : 'text-sage-dark/80 hover:bg-moss/70 hover:text-sage-dark',
   ].join(' ')
 
+function compareLabel(count: number) {
+  return count > 0 ? `Palyginimas (${count})` : 'Palyginimas'
+}
+
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { spaIds } = useCompare()
+  const compareText = compareLabel(spaIds.length)
 
   function closeMenu() {
     setMenuOpen(false)
@@ -45,7 +52,7 @@ export function Header() {
             SPA sąrašas
           </NavLink>
           <NavLink to="/palyginimas" className={linkClass}>
-            Palyginimas
+            {compareText}
           </NavLink>
         </nav>
       </div>
@@ -63,7 +70,7 @@ export function Header() {
             SPA sąrašas
           </NavLink>
           <NavLink to="/palyginimas" className={linkClass} onClick={closeMenu}>
-            Palyginimas
+            {compareText}
           </NavLink>
         </nav>
       ) : null}
