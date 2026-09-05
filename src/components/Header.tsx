@@ -4,7 +4,7 @@ import { useCompare } from '../hooks/useCompare.ts'
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   [
-    'rounded-md px-3 py-2 text-base',
+    'rounded-md px-3 py-3 text-base min-h-11 md:py-2',
     isActive
       ? 'bg-moss font-medium text-sage-dark'
       : 'text-sage-dark/80 hover:bg-moss/70 hover:text-sage-dark',
@@ -24,19 +24,19 @@ export function Header() {
   }
 
   return (
-    <header className="border-b border-sand-dark bg-sand/90">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
+    <header className="sticky top-0 z-20 border-b border-sand-dark bg-sand/95">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
         <NavLink
           to="/"
           onClick={closeMenu}
-          className="text-lg font-semibold text-sage-dark"
+          className="truncate text-base font-semibold text-sage-dark sm:text-lg"
         >
           Spa Stay Guide
         </NavLink>
 
         <button
           type="button"
-          className="rounded-md border border-sage/40 px-3 py-2 text-sm text-sage-dark md:hidden"
+          className="min-h-11 min-w-11 rounded-md border border-sage/40 px-3 py-2 text-sm text-sage-dark md:hidden"
           aria-expanded={menuOpen}
           aria-controls="pagrindinis-meniu"
           onClick={() => setMenuOpen((open) => !open)}
@@ -60,7 +60,7 @@ export function Header() {
       {menuOpen ? (
         <nav
           id="pagrindinis-meniu"
-          className="flex flex-col gap-1 border-t border-sand-dark px-4 py-3 md:hidden"
+          className="flex min-h-11 flex-col gap-1 border-t border-sand-dark px-4 py-3 md:hidden"
           aria-label="Pagrindinis"
         >
           <NavLink to="/" className={linkClass} end onClick={closeMenu}>

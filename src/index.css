@@ -20,4 +20,5 @@ body {
   background-color: var(--color-sand);
   color: var(--color-sage-dark);
   font-family: var(--font-sans);
+  overflow-wrap: break-word;
 }

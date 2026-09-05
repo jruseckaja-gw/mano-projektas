@@ -37,23 +37,27 @@ export function ComparePage() {
   }
 
   return (
-    <section className="mx-auto max-w-5xl px-4 py-10">
+    <section className="mx-auto max-w-5xl px-4 py-6 sm:py-10">
       <h1 className="text-2xl font-semibold text-sage-dark">Palyginimas</h1>
-      <p className="mt-2 mb-6 text-sage-dark/80">
+      <p className="mt-2 mb-3 text-sage-dark/80">
         Šalia vienas kito – {selected.length} pasirinkti SPA.
       </p>
-      <div className="overflow-x-auto rounded-2xl border border-sand-dark">
+      <p className="mb-4 text-sm text-sage-dark/70 md:hidden">
+        Lentelę slink į šoną, kad pamatytum visus SPA.
+      </p>
+      <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+        <div className="rounded-2xl border border-sand-dark">
         <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
           <caption className="sr-only">Pasirinktų SPA palyginimas</caption>
           <thead>
             <tr className="bg-moss/60">
-              <th className="border-b border-sand-dark px-4 py-3 font-medium">
+              <th className="sticky left-0 z-10 min-w-28 border-b border-sand-dark bg-moss/90 px-3 py-3 font-medium sm:px-4">
                 Savybė
               </th>
               {selected.map((spa) => (
                 <th
                   key={spa.id}
-                  className="border-b border-sand-dark px-4 py-3 font-semibold"
+                  className="min-w-40 border-b border-sand-dark px-3 py-3 font-semibold sm:px-4"
                 >
                   {spa.name}
                 </th>
@@ -108,15 +112,15 @@ export function ComparePage() {
               ))}
             </CompareRow>
             <tr>
-              <th className="border-t border-sand-dark px-4 py-3 text-left font-medium">
+              <th className="sticky left-0 z-10 min-w-28 border-t border-sand-dark bg-sand px-3 py-3 text-left font-medium sm:px-4">
                 Veiksmai
               </th>
               {selected.map((spa) => (
-                <td key={spa.id} className="border-t border-sand-dark px-4 py-3">
+                <td key={spa.id} className="border-t border-sand-dark px-3 py-3 sm:px-4">
                   <button
                     type="button"
                     onClick={() => removeSpa(spa.id)}
-                    className="rounded-full border border-sage px-3 py-1.5 text-sage-dark hover:bg-moss"
+                    className="min-h-11 rounded-full border border-sage px-4 py-2 text-sage-dark hover:bg-moss"
                   >
                     Pašalinti
                   </button>
@@ -125,6 +129,7 @@ export function ComparePage() {
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
     </section>
   )
@@ -138,9 +143,11 @@ type CompareRowProps = {
 function CompareRow({ label, children }: CompareRowProps) {
   return (
     <tr className="odd:bg-sand even:bg-moss/30">
-      <th className="px-4 py-3 font-medium">{label}</th>
+      <th className="sticky left-0 z-10 min-w-28 bg-inherit px-3 py-3 font-medium sm:px-4">
+        {label}
+      </th>
       {children.map((child, index) => (
-        <td key={index} className="px-4 py-3 align-top">
+        <td key={index} className="min-w-40 px-3 py-3 align-top sm:px-4">
           {child}
         </td>
       ))}

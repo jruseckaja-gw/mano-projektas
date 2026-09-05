@@ -7,7 +7,7 @@ const heroImage =
   'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80'
 
 const selectClass =
-  'w-full rounded-md border border-sand-dark bg-sand px-3 py-2 text-left text-sage-dark'
+  'w-full min-h-11 rounded-md border border-sand-dark bg-sand px-3 py-2 text-base text-left text-sage-dark'
 
 export function HomePage() {
   const navigate = useNavigate()
@@ -30,11 +30,11 @@ export function HomePage() {
 
   return (
     <section
-      className="relative flex min-h-[70vh] items-center justify-center bg-cover bg-center px-4 py-16 text-center"
+      className="relative flex min-h-[70vh] items-center justify-center bg-cover bg-center px-3 py-10 text-center sm:px-4 sm:py-16"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
       <div className="absolute inset-0 bg-sage-dark/55" />
-      <div className="relative mx-auto w-full max-w-2xl rounded-2xl bg-sand/90 px-6 py-10 shadow-sm">
+      <div className="relative mx-auto w-full max-w-2xl rounded-2xl bg-sand/90 px-4 py-8 shadow-sm sm:px-6 sm:py-10">
         <p className="mb-3 text-sm font-medium tracking-wide text-sage uppercase">
           Wellness paieška Europoje
         </p>

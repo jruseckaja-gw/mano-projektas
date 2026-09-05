@@ -11,7 +11,7 @@ export function CompareAddButton({ spaId }: CompareAddButtonProps) {
 
   if (isCompared(spaId)) {
     return (
-      <p className="rounded-full bg-moss px-4 py-2 text-center text-sm font-medium text-sage-dark">
+      <p className="min-h-11 rounded-full bg-moss px-4 py-3 text-center text-sm font-medium text-sage-dark">
         Jau palyginime
       </p>
     )
@@ -35,7 +35,7 @@ export function CompareAddButton({ spaId }: CompareAddButtonProps) {
       <button
         type="button"
         onClick={handleAdd}
-        className="w-full rounded-full border border-sage px-4 py-2 text-sm text-sage-dark hover:bg-moss"
+        className="min-h-11 w-full rounded-full border border-sage px-4 py-3 text-base text-sage-dark hover:bg-moss"
       >
         Pridėti palyginti
       </button>

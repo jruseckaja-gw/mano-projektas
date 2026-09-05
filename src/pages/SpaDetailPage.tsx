@@ -39,13 +39,13 @@ export function SpaDetailPage() {
   const location = `${spa.city}, ${countryLabels[spa.country]}`
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10">
+    <article className="mx-auto max-w-3xl px-4 py-6 sm:py-10">
       <img
         src={spa.imageUrl}
         alt={`${spa.name}, ${location}`}
-        className="h-64 w-full rounded-2xl object-cover sm:h-80"
+        className="h-52 w-full rounded-2xl object-cover sm:h-80"
       />
-      <h1 className="mt-6 text-3xl font-semibold text-sage-dark">{spa.name}</h1>
+      <h1 className="mt-6 text-2xl font-semibold text-sage-dark sm:text-3xl">{spa.name}</h1>
       <p className="mt-2 text-sage-dark/80">{location}</p>
       <p className="mt-1 text-sage">{spaTypeLabels[spa.type]}</p>
       <p className="mt-1 font-medium text-sage-dark">
@@ -86,7 +86,7 @@ export function SpaDetailPage() {
           href={spa.websiteUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block rounded-full bg-sage px-6 py-3 text-center text-sand hover:bg-sage-dark"
+          className="inline-block min-h-11 w-full rounded-full bg-sage px-6 py-3 text-center text-sand hover:bg-sage-dark sm:w-auto"
         >
           Oficiali svetainė
         </a>

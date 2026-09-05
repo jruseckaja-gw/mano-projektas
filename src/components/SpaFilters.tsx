@@ -20,7 +20,7 @@ type SpaFiltersProps = {
 }
 
 const selectClass =
-  'mt-1 w-full rounded-md border border-sand-dark bg-sand px-3 py-2 text-sage-dark'
+  'mt-1 w-full min-h-11 rounded-md border border-sand-dark bg-sand px-3 py-2 text-base text-sage-dark'
 
 type FilterSelectProps = {
   label: string
